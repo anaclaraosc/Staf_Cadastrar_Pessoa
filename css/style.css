@@ -1,0 +1,35 @@
+body {
+    background-color: #001124;
+    font-family: 'Montserrat', sans-serif;
+}
+th {
+    background-color: #2681BF;
+    color: snow;
+}
+h3 {
+    font-size: 30px;
+    font-weight: bold;
+}
+h4 {
+    margin-top: 20px;
+    text-align: center;
+}
+.form-control {
+    font-size: 17px;
+}
+.jumbotron {
+    width: 600px;
+    font-size: 50px;
+    text-align: center;
+    background-color:  snow;
+    margin: 20px auto auto auto;
+}
+.table {
+    margin-top: 20px;		
+}
+.form-control {
+	margin-bottom: 10px;
+}
+.negrito {
+	font-weight: bold;
+}

@@ -1,0 +1,40 @@
+<html ng-app="cadastrarPessoa">
+<head>
+    <title>Cadastrar Pessoa</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/script.js"></script>
+</head>
+     <body ng-controller="cadastrarPessoaCtrl">
+        <div class="jumbotron">
+            <img src="img/logo.png" height = 50 px width = 150 px >
+                 <h3>{{app}}</h3>
+                    <input class="form-control" type="text" ng-model="pessoa.nome" placeholder="Nome"/>
+                    <input class="form-control" type="tel" ng-model="pessoa.telefone" placeholder="Telefone"/>
+                    <input class="form-control" type="email" ng-model="pessoa.email" placeholder="E-mail"/>
+                    <button class="btn btn-primary btn-block" ng-click="adicionarPessoa(pessoa)" ng-disabled="!pessoa.nome || !pessoa.telefone || !pessoa.email">Cadastrar</button>
+                    <table ng-show="pessoas.length > 0" class="table">
+                    <tr>
+                        <th></th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th></th>
+                    </tr>
+                    <tr ng-class="{'selecionado negrito': pessoa.selecionado}" ng-repeat="pessoa in pessoas">
+                        <td><input type="checkbox" ng-model="pessoa.selecionado"/></td>
+                        <td>{{pessoa.nome}}</td>
+                        <td>{{pessoa.telefone}}</td>
+                        <td>{{pessoa.email}}</td>
+                        <td><div style="width: 20px; height: 20px;" ng-style="{'background-color': pessoa.cor}"></div></td>
+                    </tr>
+                    </table>
+                    <button class="btn btn-danger btn-block" ng-click="apagarPessoas(pessoas)" ng-if="isPessoaSelecionado(pessoas)">Apagar Pessoas</button>
+            </div>
+    </body>
+    <footer>
+        <h4>Criado por Ana Clara  </h4>
+    </footer>
+</html>
